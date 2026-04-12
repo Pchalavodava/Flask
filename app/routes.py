@@ -5,4 +5,3 @@ from app import app
 def example():
     return "For example Hello"
 
-
