@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<button id="secret-button"></button>
+<div id="secret-message">Congratulations! You've found the secret button!</div>
+<h1 class="funny-title">😄 Enter your details 🦄</h1>
+<form action="/submit" method="POST" class="funny-form">
+    <button type="button" id="escape-button">🎁</button>
+    <label for="name">Your Super Cool Name:</label>
+    <input type="text" id="name" name="name" required
+           oninvalid="this.setCustomValidity('Hi, Mr. Anonymous')"
+           oninput="this.setCustomValidity('')"><br>
+
+    <label for="email">Your Awesome Email:</label>
+    <div id="emoji">🤪</div>
+    <input type="email" id="email" name="email" required
+           oninvalid="this.setCustomValidity('Your email is really awesome ha-ha')"
+           oninput="this.setCustomValidity('')"><br><br>
+
+    <label for="favorite-color">Your Favorite Color:</label>
+    <input type="text" id="favorite-color" name="favorite-color">
+    <button type="button" id="press-button">🧜‍♂️ Click on me!</button>
+    <div id="color"></div>
+    <br>
+
+    <label for="profession">Your Profession:</label>
+    <select id="profession" name="profession" class="profession">
+        <option value="developer">Developer</option>
+        <option value="designer">Designer</option>
+        <option value="manager">Manager</option>
+    </select>
+
+    <p>Your Hobbies:</p>
+    <div class="hobbies">
+        <label class="checkbox"><input type="checkbox" name="hobbies" value="books"><span
+                class="book"></span>Books</label>
+        <label class="checkbox"><input type="checkbox" name="hobbies" value="sports"><span
+                class="sport"></span>Sports</label>
+        <label class="checkbox"><input type="checkbox" name="hobbies" value="games"><span
+                class="game"></span>Games</label>
+    </div>
+    <br>
+
+    <p>Your Level:</p>
+    <div class="levels">
+        <label class="level"><input type="radio" name="level" value="beginner" checked> Beginner</label>
+        <label class="level"><input type="radio" name="level" value="advanced"> Advanced</label>
+    </div>
+    <br>
+
+    <button type="submit" class="funny-button">🚀 Let's go!</button>
+
+</form>
+<script src="{{ url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>

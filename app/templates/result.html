@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submission result</title>
+</head>
+<body>
+<h1>Submission successful</h1>
+<p>Thank you, <strong>{{ name }}</strong>!</p>
+<!--    <p>We have sent a confirmation to <strong>{{ email }}</strong>.</p>-->
+<p>Your favorite color is: <strong><span style="color: {{ color }}">{{ color }}</span></strong></p>
+<p>Your profession is: <strong>{{ profession }}</strong></p>
+<p>Your hobbies: <strong>{% if hobbies is string %}
+    {{ hobbies }}
+    {% else %}
+    {{ hobbies | join(', ') }}
+    {% endif %}</strong></p>
+<p>Your level is: <strong>{{ level }}</strong></p>
+
+<div class="funny-joke">{{ joke }}</div><br>
+
+<a href="/">Go back to form</a>
+</body>
+</html>
